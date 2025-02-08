@@ -12,7 +12,7 @@ int main() {
     if (x < 2) {
         y = (6 * sin(x) - pow(x, 2)) / 3;
     }
-    else if (x <= 2 && x >= 4) {
+    else if (x >= 2 && x < 4) {
         y = (exp(3 * x - cos(2 * x))) / (3 + 4 * pow(x, 6));
     }
     else {

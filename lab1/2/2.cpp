@@ -6,7 +6,7 @@
 
 int main() {
     setlocale(0, "rus");
-    float x, y;
+    float x, y, r;
     std::cout << "Введите x: \n";
     std::cin >> x;
     if (x < 2) {
@@ -16,7 +16,8 @@ int main() {
         y = (exp(3 * x - cos(2 * x))) / (3 + 4 * pow(x, 6));
     }
     else {
-        y = pow(6 * pow(x, 3) - 4 * tan(x + 1), 1 / 5);
+        r = 6 * pow(x, 3) - 4 * tan(x + 1);
+        y = pow(6 * pow(x, 3) - 4 * tan(x + 1), (1.0 / 5.0));
     }
     std::cout << y;
 }

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main(){
+int main() {
     setlocale(LC_ALL, "");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
@@ -26,10 +26,15 @@ int main(){
     cout << "Предложение: " << pr << '\n';
     pr = pr + ' ';
     for (int i = 0; i < pr.length(); i++) {
-        if (isalpha(pr[i])) {
+        if (ispunct(pr[i])) {
+            pr[i] = ' ';
+        }
+    }
+    for (int i = 0; i < pr.length(); i++) {
+        if (pr[i] != ' ') {
             ans1pr = ans1pr + pr[i];
         }
-        else{
+        else {
             if (ans1end.length() < ans1pr.length()) {
                 ans1end = ans1pr;
                 ans1pr = "";

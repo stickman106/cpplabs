@@ -12,12 +12,21 @@ int main(){
     string pr;
     string ans1pr;
     string ans1end = "";
-    cout << "Введите предложение: " << '\n';
-    getline(cin, pr);
+    while (true) {
+        cout << "Введите предложение: " << '\n';
+        getline(cin, pr);
+        if (pr.empty()) {
+            cin.ignore(string::npos, '\n');
+            cout << "Пустая строка. Введите ещё раз" << '\n';
+        }
+        else {
+            break;
+        }
+    }
     cout << "Предложение: " << pr << '\n';
     pr = pr + ' ';
     for (int i = 0; i < pr.length(); i++) {
-        if (pr[i] != ' ') {
+        if (isalpha(pr[i])) {
             ans1pr = ans1pr + pr[i];
         }
         else{
@@ -34,16 +43,34 @@ int main(){
 
     string s;
     string s0;
-    cout << "Введите предложение s1: " << '\n';
-    getline(cin, s);
-    cout << "Введите предложение s2: " << '\n';
-    getline(cin, s0);
+    while (true) {
+        cout << "Введите предложение s: " << '\n';
+        getline(cin, s);
+        if (s.empty()) {
+            cin.ignore(string::npos, '\n');
+            cout << "Пустая строка. Введите ещё раз" << '\n';
+        }
+        else {
+            break;
+        }
+    }
+    while (true) {
+        cout << "Введите предложение s0: " << '\n';
+        getline(cin, s0);
+        if (s0.empty()) {
+            cin.ignore(string::npos, '\n');
+            cout << "Пустая строка. Введите ещё раз" << '\n';
+        }
+        else {
+            break;
+        }
+    }
     cout << "Предложение s: " << s << '\n';
     cout << "Предложение s0: " << s0 << '\n';
     if (s.find(s0) != string::npos) { //string::npos - число 18446744073709551615
-        cout << "True";
+        cout << "TRUE";
     }
     else {
-        cout << "False";
+        cout << "FALSE";
     }
 }

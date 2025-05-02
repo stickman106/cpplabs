@@ -4,6 +4,8 @@ using namespace std;
 
 int main(){
     setlocale(LC_ALL, "");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     // Задание 1: Работа с маршрутами
     int n;
     while (true) {
@@ -42,7 +44,7 @@ int main(){
 
     // Задание 2: Обработка файла
     string filename;
-    cout << "Введите название файла: ";
+    cout << "Введите название файла *.txt: ";
     cin.ignore();
     getline(cin, filename);
     if (isFileExistsAndNotEmpty(filename) == false) {

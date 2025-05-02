@@ -19,7 +19,7 @@ void fillMarsh(vector<MARSH>& trafic) {
         while (true) {
             cout << "Введите номер маршрута(целое число): \n";
             cin >> marsh.NUMER;
-            if (cin.fail() or std::cin.peek() != '\n') {
+            if (cin.fail() or cin.peek() != '\n') {
                 cin.clear();
                 cin.ignore(100000000, '\n');
                 cout << "Это не целое число. Введите снова \n";
@@ -115,7 +115,7 @@ string processLine(const string& line) {
             }
         }
         // Добавляем слово, если его не нужно удалять
-        if (!shouldRemove) {
+        if (shouldRemove == false) {
             result += words[i] + " ";
         }
     }
@@ -126,17 +126,17 @@ string processLine(const string& line) {
 
 void processFile(const string& filename) {
     ifstream inFile(filename);
-    vector<string> lines;
+    vector<string> linesr;
     string line = "";
-    while (std::getline(inFile, line)) {
+    while (getline(inFile, line)) {
         line = line + " ";
-        lines.push_back(processLine(line));
+        linesr.push_back(processLine(line));
     }
     inFile.close();
 
-    //std::ofstream outFile(filename); // Файл очищается при открытии
-    for (const auto& curLine : lines) {
-        cout << "zapis" << curLine << '\n';
+    //ofstream outFile(filename); // Файл очищается при открытии
+    for (const auto& curLine : linesr) {
+        cout <<  curLine << '\n';
         //outFile << curLine << "\n"; // Записываем обработанные строки
     }
     //outFile.close();

@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <Windows.h>
 
 struct MARSH {
     std::string BEGST;
